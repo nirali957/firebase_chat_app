@@ -77,10 +77,9 @@ class _HomeScreenState extends State<HomeScreen> {
                             );
                           },
                           leading: data['image'] == null
-                              ? ClipOval(
-                                  child: Container(
-                                    height: 45,
-                                    width: 45,
+                              ? const ClipOval(
+                                  child: Icon(
+                                    Icons.person,
                                     color: Colors.red,
                                   ),
                                 )

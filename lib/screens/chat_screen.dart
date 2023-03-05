@@ -48,14 +48,14 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.red,
       appBar: AppBar(
         title: ListTile(
           contentPadding: EdgeInsets.zero,
           leading: widget.data!['image'] == null
-              ? ClipOval(
-                  child: Container(
-                    height: 45,
-                    width: 45,
+              ? const ClipOval(
+                  child: Icon(
+                    Icons.person,
                     color: Colors.red,
                   ),
                 )
@@ -74,7 +74,7 @@ class _ChatScreenState extends State<ChatScreen> {
         children: [
           Expanded(
             child: users == null
-                ? SizedBox()
+                ? const SizedBox()
                 : StreamBuilder<QuerySnapshot>(
                     stream: users!.orderBy('time', descending: true).snapshots(),
                     builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -134,7 +134,7 @@ class _ChatScreenState extends State<ChatScreen> {
       alignment: WrapAlignment.start,
       children: [
         Container(
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           margin: EdgeInsets.only(top: 10, right: MediaQuery.of(context).size.width * 0.35),
           decoration: BoxDecoration(
             color: Colors.blue,
@@ -155,7 +155,7 @@ class _ChatScreenState extends State<ChatScreen> {
       alignment: WrapAlignment.end,
       children: [
         Container(
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           margin: EdgeInsets.only(top: 10, left: MediaQuery.of(context).size.width * 0.35),
           decoration: BoxDecoration(
             color: Colors.blue,
